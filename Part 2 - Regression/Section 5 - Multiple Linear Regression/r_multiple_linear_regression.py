@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 #%% Importing the dataset
-dataset = pd.read_csv('/Users/roeeyn/Desktop/Machine Learning A-Z/Part 2 - Regression/Section 5 - Multiple Linear Regression/50_Startups.csv')
+dataset = pd.read_csv('/Users/roeeyn/Desktop/ML A-z/Part 2 - Regression/Section 5 - Multiple Linear Regression/50_Startups.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 4].values
 
@@ -41,3 +41,7 @@ regressor.fit(X_train, y_train)
 
 #%% Testing the model
 y_pred = regressor.predict(X_test)
+
+#%% Building optimal model using Baxkward Elimination
+import statsmodels.formula.api as sm
+X = np.append(arr=np.ones((50, )).astype(int), values=X, axis=1)
